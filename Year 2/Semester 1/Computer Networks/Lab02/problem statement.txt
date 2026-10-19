@@ -1,0 +1,12 @@
+https://www.cs.ubbcluj.ro/~dadi/compnet/labs/lab2/
+
+
+Try to implement the same problems as for lab 1 in the situation the server needs to be concurrent – i.e. be able to accept multiple clients at the same time.
+
+Also try to solve the following problems in the same context. What approach would be the best in the following scenarios? (Threads, processes)
+
+ 
+
+1.   The client takes a string from the command line and sends it to the server. The server interprets the string as a command with its parameters. It executes the command and returns the standard output and the exit code to the client.
+
+2.   The client sends the complete path to a file. The server returns back the length of the file and its content in the case the file exists. When the file does not exist the server returns a length of -1 and no content. The client will store the content in a file with the same name as the input file with the suffix –copy appended (ex: for f.txt => f.txt-copy).

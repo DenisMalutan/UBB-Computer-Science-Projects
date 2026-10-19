@@ -1,0 +1,27 @@
+consult('c:/prolog/switest.pl').
+
+
+
+
+Valley:
+
+? valley([10, 8, 6, 9, 11, 13]).
+
+-> true.
+
+
+valley([1, 2, 3]).
+
+-> false.
+
+
+
+Alternate Sum:
+
+? alt_sum([1, 2, 3, 4], Result).
+
+-> Result = -2.
+
+? alt_sum([10, 5, 2], X).
+
+-> X = 7. (since 10 - 5 + 2 = 7)
