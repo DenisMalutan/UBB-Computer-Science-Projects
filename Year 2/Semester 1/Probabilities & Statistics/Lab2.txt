@@ -1,0 +1,154 @@
+from itertools import product
+from random import randint
+from matplotlib.pyplot import plot, grid, xticks, yticks, title, show
+
+counts = {total : 0 for total in range(3, 19)}
+
+print(counts)
+
+for roll in product(range(1, 7), repeat = 3):
+  counts[sum(roll)] += 1
+
+print(counts)
+
+title('The number of ways to roll a given total with 3 dice')
+plot(list(counts.keys()), list(counts.values()),  "xg")
+grid()
+xticks(list(counts.keys()))
+yticks(list(counts.values()))
+show()
+
+
+----------------------------------
+
+problem1:
+from itertools import product
+from random import randint
+from matplotlib.pyplot import plot, grid, xticks, yticks, title, show
+
+counts = {total : 0 for total in range(3, 19)}
+
+print(counts)
+
+
+
+for _ in range(100000):
+  a = randint(1,6)
+  b = randint(1,6)
+  c = randint(1,6)
+
+  counts[a+b+c] += 1
+
+
+print(counts)
+
+title('The number of ways to roll a given total with 3 dice')
+plot(list(counts.keys()), list(counts.values()),  "xg")
+grid()
+xticks(list(counts.keys()))
+yticks(list(counts.values()))
+show()
+
+
+
+----------------------------
+problem 2: 
+from matplotlib.axis import YAxis
+from matplotlib.pyplot import axis, plot, show
+from random import random
+from math import dist
+
+axis('square')
+axis((0, 1, 0, 1))
+
+N = 10000
+count = 0
+
+
+
+# i
+
+for _ in range(N):
+  x = random()
+  y = random()
+  F = [x,y]
+  M = [0.5, 0.5]
+ # i)
+  if dist(F, M) <= 0.5: 
+    count += 1
+    plot(F[0], F[1], 'go')
+  else:
+    plot(F[0],F[1],'ro')
+
+freq = count / N
+p = freq * 4
+
+show()
+print(count)
+print(freq)
+print(p)
+
+
+
+
+# ii
+
+for _ in range(N):
+  x = random()
+  y = random()
+  F = [x,y]
+  M = [0.5, 0.5]
+
+
+  FA = dist(F, (0,0))
+  FB = dist(F, (1,0))
+  FC = dist(F, (1,1))
+  FD = dist(F, (0,1))
+  if dist(F, M) <= min(FA, FB, FC, FD):
+    count += 1
+    plot(F[0], F[1], 'go')
+  else:
+     plot(F[0],F[1],'ro')
+
+
+freq = count / N
+p = freq * 4
+
+show()
+print(count)
+print(freq)
+print(p)
+
+
+
+
+
+
+# iii
+
+for _ in range(N):
+  x = random()
+  y = random()
+  F = [x,y]
+  M = [0.5, 0.5]
+
+
+  FA = dist(F, (0,0))
+  FB = dist(F, (1,0))
+  FC = dist(F, (1,1))
+  FD = dist(F, (0,1))
+
+  if dist(F, M) <= F[1]:
+    count += 1
+    plot(F[0], F[1], 'go')
+  else:
+     plot(F[0],F[1],'ro')
+
+
+freq = count / N
+p = freq * 4
+
+show()
+print(count)
+print(freq)
+print(p)
